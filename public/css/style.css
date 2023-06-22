@@ -109,4 +109,61 @@
     justify-content: space-between;
     width: 100%;
     padding: 40px;
+    background-color: rgb(158, 214, 196);
 }
+.date-section{
+    display: flex;
+    flex-direction: column;
+}
+.date-section h5{
+    height: 70%;
+    /* font-size: larger; */
+    font-size: x-large;
+    letter-spacing: 4px;
+}
+.date-section span{
+    font-size: xx-small;
+}
+.fourth-page-bottom p{
+    width: 40%;
+    color: #faf8f8;
+}
+/*--------fifth page--------*/
+.fifth-page{
+    /* display: flex;
+    align-items: center;
+    flex-direction: column; */
+}
+.fifth-page-top{
+
+}
+.latest-news{
+    display: flex;
+}
+.news-items{
+    border: 1px solid black;
+    margin: 20px;
+}
+.fifth-page-mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 14px;
+}
+.fifth-page-mid p{
+    width: 60%;
+}
+.fifth-page-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.featured-teachers{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 20px;
+}
+/*--------footer styling--------*/

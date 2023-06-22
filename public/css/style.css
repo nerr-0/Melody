@@ -1,0 +1,112 @@
+/*-----------here we go---------*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*----------multiple items--------*/
+.first-page, .second-page, .third-page, .fourth-page, .fifth-page{
+    height: 100vh;
+    width: 100%;
+}
+
+/*---------first page styling--------*/
+.first-page{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    
+}
+.first-page-mid-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.first-page-mid-section h1, h4{
+    word-spacing: 4px;
+    letter-spacing: 2px;
+}
+.first-page-bottom-section{
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+/*----------second page styling----------*/
+.second-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.advert-card{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    border: 1px solid black;
+}
+/*-----------third page styling-------*/
+.third-page{
+    display: flex;
+    flex-direction: column;
+    
+}
+.music-groups{
+    display: flex;
+    padding: 20px;
+    
+}
+.music-group-card{
+    border: 1px solid black;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.third-page-mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+    gap: 14px;
+}
+.third-page-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*----------fourth page styling--------*/
+.fourth-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.musical-instruments{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.each-instrument{
+    border: 1px solid black;
+    width: 20%;
+    margin: 20px;
+}
+.fourth-page-mid{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.numbers{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;    
+}
+.fourth-page-bottom{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px;
+}

@@ -167,3 +167,28 @@
     padding: 20px;
 }
 /*--------footer styling--------*/
+.footer-top{
+    display: flex;
+    justify-content: space-around;
+}
+.footer-mid{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.footer-address{
+    border: 1px solid black;
+    margin: 20px;
+}
+.footer-twitter{
+    border: 1px solid blue;
+    margin: 20px;
+}
+.footer-open-hours{
+    border: 1px solid red;
+    margin: 20px;
+}
+.footer-bottom{
+    display: flex;
+    justify-content: center;
+}

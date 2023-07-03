@@ -89,8 +89,27 @@ nav a:hover{
 .advert-card{
     display: flex;
     width: 60%;
+    height: 50%;
     align-items: center;
     border: 1px solid black;
+}
+.advert-card-left-side{
+    width: 50%;
+    border: 1px solid red;
+}
+.advert-card img{
+   height: 100%;
+   width: 90%;
+}
+.advert-card-right-side{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border: 1px solid blue;
+    height: 100%;
+    width: 50%;
 }
 /*-----------third page styling-------*/
 .third-page{

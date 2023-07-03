@@ -125,6 +125,7 @@ h4 {
 .third-page {
   display: flex;
   flex-direction: column;
+  height: 160vh;
 }
 .third-page-top {
   display: flex;
@@ -136,11 +137,8 @@ h4 {
 .music-groups {
   display: flex;
   padding: 20px;
-
 }
 .music-group-card {
-  /* border: 1px solid black; */
-  margin: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -156,30 +154,65 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 30%;
+  height: 45%;
   width: 100%;
   gap: 14px;
+  background-image: url("/images/make-art.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 50px;
+}
+.third-page-mid p{
+    width: 30%;
+    color: aliceblue;
+}
+.third-page-mid h3{
+    font-size: 24px;
+    color: aliceblue;
+}
+.third-page-mid button{
+    padding: 10px;
+    background-color: yellow;
+    border-radius: 40px;
+    border: none;
 }
 .third-page-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  gap: 20px;
+  background-color: rgb(230, 233, 238);
 }
 /*----------fourth page styling--------*/
 .fourth-page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 .musical-instruments {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 20px 0px 20px 20px;
 }
 .each-instrument {
-  border: 1px solid black;
   width: 20%;
-  margin: 20px;
+  margin: 16px;
+  padding: 10px;
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  /*trial code*/
+  -webkit-box-shadow: 3px 5px 50px -14px rgba(158, 214, 196, 1);
+-moz-box-shadow: 3px 5px 50px -14px rgba(158, 214, 196, 1);
+box-shadow: 3px 5px 50px -14px rgba(158, 214, 196, 1);
+}
+.each-instrument img{
+    width: 50px;
+    height: 50px;
 }
 .fourth-page-mid {
   height: 40%;

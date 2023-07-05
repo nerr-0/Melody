@@ -162,19 +162,19 @@ h4 {
   background-size: 100%;
   padding: 50px;
 }
-.third-page-mid p{
-    width: 30%;
-    color: aliceblue;
+.third-page-mid p {
+  width: 30%;
+  color: aliceblue;
 }
-.third-page-mid h3{
-    font-size: 24px;
-    color: aliceblue;
+.third-page-mid h3 {
+  font-size: 24px;
+  color: aliceblue;
 }
-.third-page-mid button{
-    padding: 10px;
-    background-color: yellow;
-    border-radius: 40px;
-    border: none;
+.third-page-mid button {
+  padding: 10px;
+  background-color: yellow;
+  border-radius: 40px;
+  border: none;
 }
 .third-page-bottom {
   display: flex;
@@ -189,12 +189,12 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  height: 140vh;
 }
 .musical-instruments {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 0px 20px 20px;
+  padding: 40px 0px 20px 20px;
 }
 .each-instrument {
   width: 20%;
@@ -205,33 +205,68 @@ h4 {
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
-  /*trial code*/
   -webkit-box-shadow: 3px 5px 50px -14px rgba(158, 214, 196, 1);
--moz-box-shadow: 3px 5px 50px -14px rgba(158, 214, 196, 1);
-box-shadow: 3px 5px 50px -14px rgba(158, 214, 196, 1);
 }
-.each-instrument img{
-    width: 50px;
-    height: 50px;
+.each-instrument img {
+  width: 50px;
+  height: 50px;
 }
 .fourth-page-mid {
   height: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  background-image: url("/images/number.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 20px;
+}
+.fourth-page-mid h3,
+p {
+  color: rgb(226, 232, 238);
 }
 .numbers {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+.each-number-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.each-number-item span {
+  color: aliceblue;
+  background-color: rgb(191, 196, 190);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 50%;
+}
+.each-number-item h5 {
+  color: aliceblue;
 }
 .fourth-page-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   padding: 40px;
   background-color: rgb(158, 214, 196);
+}
+.fourth-page-bottom button{
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  color: aliceblue;
+  background-color: rgb(107, 126, 107);
+}
+.fourth-page-bottom h4 {
+  color: aliceblue;
 }
 .date-section {
   display: flex;
@@ -242,9 +277,11 @@ box-shadow: 3px 5px 50px -14px rgba(158, 214, 196, 1);
   /* font-size: larger; */
   font-size: x-large;
   letter-spacing: 4px;
+  color: aliceblue;
 }
 .date-section span {
   font-size: xx-small;
+  color: aliceblue;
 }
 .fourth-page-bottom p {
   width: 40%;

@@ -61,10 +61,16 @@ nav a:hover {
   gap: 16px;
   margin-bottom: 150px;
 }
-.first-page-mid-section h1,
-h4 {
+.first-page-mid-section h1{
   word-spacing: 4px;
   letter-spacing: 2px;
+  font-size: 60px;
+  color: aliceblue;
+}
+.first-page-mid-section h4{
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  color: aliceblue;
 }
 .first-page-bottom-section {
   width: inherit;
@@ -78,12 +84,13 @@ h4 {
   color: aliceblue;
 }
 
-.first-page-bottom-section button {
+/* .first-page-bottom-section button {
   border: none;
   background-color: #0d5553;
   color: aliceblue;
-  padding: 16px;
-}
+  padding: 12px;
+  border-radius: 20%;
+} */
 /*----------second page styling----------*/
 .second-page {
   display: flex;
@@ -173,7 +180,8 @@ h4 {
   font-size: 24px;
   color: aliceblue;
 }
-.third-page-mid button {
+/*--------first page button styled here-------*/
+.third-page-mid button, .first-page-mid-section button {
   padding: 10px;
   background-color: yellow;
   border-radius: 40px;
@@ -262,9 +270,10 @@ p {
   justify-content: space-around;
   width: 100%;
   padding: 40px;
-  background-color: rgb(158, 214, 196);
+  background-color: #0abab5;
 }
-.fourth-page-bottom button{
+/*----------first page button styled here------*/
+.fourth-page-bottom button, .first-page-bottom-section button{
   padding: 12px;
   border-radius: 20px;
   border: none;
@@ -298,7 +307,7 @@ p {
   /* display: flex;
     align-items: center;
     flex-direction: column; */
-    height: 180vh;
+    height: 170vh;
 }
 .fifth-page-top {
   display: flex;
@@ -383,9 +392,22 @@ p {
   height: 20px;
 }
 /*--------footer styling--------*/
+.footer-heading{
+  display: flex;
+  justify-content: center;
+  background-color: #0abab5;
+  padding: 20px;
+}
 .footer-top {
   display: flex;
   justify-content: space-around;
+  background-color: #0abab5;
+  padding: 20px;
+}
+.footer-top img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 .footer-mid {
   display: flex;
@@ -393,18 +415,56 @@ p {
   padding: 20px;
 }
 .footer-address {
-  border: 1px solid black;
   margin: 20px;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-address img{
+  width: 40px;
+  height: 40px;
 }
 .footer-twitter {
-  border: 1px solid blue;
   margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+.footer-twitter img{
+  width: 40px;
+  height: 40px;
+}
+.footer-twitter p{
+  color: black;
+  width: 60%;
 }
 .footer-open-hours {
-  border: 1px solid red;
   margin: 20px;
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
 }
-.footer-bottom {
+.footer-open-hours img{
+  width: 40px;
+  height: 40px;
+}
+.footer-open-hours span{
+  width: 60%;
+}
+
+.footer-bottom{
   display: flex;
   justify-content: center;
+  background-color: #0abab5;
+}
+.footer-bottom p{
+  color: aliceblue;
+  
+}
+.footer-bottom a{
+  text-decoration: none;
+  color: grey;
 }

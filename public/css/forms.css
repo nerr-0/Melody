@@ -11,6 +11,7 @@
   background-size: cover;
   position: relative;
   background-position: center;
+  
 }
 .form-box {
   width: 90%;
@@ -22,6 +23,7 @@
   background: #fff;
   padding: 50px 60px 70px;
   text-align: center;
+  border-radius: 5px;
 }
 .form-box h1 {
   font-size: 30px;
@@ -29,17 +31,7 @@
   color: #9ed6c4;
   position: relative;
 }
-/* .form-box h1::after{
-  content: '';
-  width: 30px;
-  height: 4px;
-  border-radius: 3px;
-  background: #9ed6c4;
-  position: absolute;
-  bottom: -12px;
-  left: 50px;
-  transform: translateX(-50%);
-} */
+
 .input-field {
   background: #d8f2f1;
   margin: 15px 0;

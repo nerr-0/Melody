@@ -48,7 +48,7 @@ nav a:hover {
   margin-top: -10px;
   margin-bottom: 6px;
 }
-.transparent:hover{
+.transparent:hover {
   cursor: pointer;
 }
 
@@ -59,7 +59,12 @@ nav a:hover {
   justify-content: space-between;
   flex-direction: column;
   padding: 20px;
-  background-image: url("/images/piano-girl.webp");
+  /* background-image: url("/images/piano-girl.webp"); */
+  background-image: linear-gradient(
+      rgba(9, 9, 34, 0.622),
+      rgba(6, 6, 31, 0.622)
+    ),
+    url(/images/piano-girl.webp);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -169,7 +174,7 @@ nav a:hover {
   height: 70px;
   border-radius: 50%;
 }
-.music-group-card p{
+.music-group-card p {
   color: black;
 }
 .third-page-mid {

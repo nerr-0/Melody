@@ -2,7 +2,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const mysql = require("mysql");
-const myFunction() = require("public/views/home#script")
+// const myFunction() = require("public/views/home#script")
 
 const app = express();
 
@@ -56,7 +56,7 @@ app.post("/sign-up", (req, res) => {
                 if (error) {
                   res.render("error");
                 } else {
-                  
+                  res.render("forms")
                 }
               }
             );
@@ -67,11 +67,32 @@ app.post("/sign-up", (req, res) => {
   );
 });
 app.post("/sign-in", (req, res)=>{
-  con.query("SELECT * from users WHERE email = ?", [req.body.email], (error, results)=>{
+  con.query("SELECT * FROM users WHERE email = ?", [req.body.email], (error, results)=>{
     if(error){
       res.render("error")
     }else{
-      
+      if(results>0){
+        con.query("SELECT password FROM users WHERE email =?", [req.body.email], (error, userPassword)=>{
+          if(error){
+            res.render("error")
+          }else{
+            bcrypt.compare(req.body.password, userPassword,(error, match)=>{
+              if(error){
+                res.render("forms", {error: "SOMETHING HAPPENED"})
+              }else{
+                if(match){
+                  res.render("user", {message: "LOGIN SUCCESSFUL"})
+                }else{
+                  res.render("forms", {error: "WRONG PASSWORD"})
+                }
+              }
+            })
+          }
+        })
+
+      }else{
+        res.render("forms", {error: "USER NOT REGISTERED"})
+      }
     }
   })
 })

@@ -488,5 +488,25 @@ p {
 
 
 @media screen and (max-width: 700px){
-  
+  *{
+    /* width: 100%; */
+    margin: 0px;
+    padding: 0px;
+    /* box-sizing: border-box; */
+  }
+  .top-nav nav{
+    display: none;
+  }
+  .first-page{
+    /* height: 90vh; */
+  }
+  .first-page-mid-section{
+    gap: 4px;
+    height: 90vh;
+  }
+  .first-page-mid-section h1{
+    /* font-size: 20px; */
+    word-spacing: normal;
+    margin-bottom: 0px;
+  }
 }

@@ -3,7 +3,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const mysql = require("mysql");
 // const myFunction() = require("public/views/home#script")
-
+const {myFunction} = require("./public/scripts/functions.js")
 const app = express();
 
 
@@ -56,7 +56,7 @@ app.post("/sign-up", (req, res) => {
                 if (error) {
                   res.render("error");
                 } else {
-                  res.render("forms")
+                  res.render("forms", myFunction())
                 }
               }
             );
@@ -68,11 +68,13 @@ app.post("/sign-up", (req, res) => {
 });
 app.post("/sign-in", (req, res)=>{
   con.query("SELECT * FROM users WHERE email = ?", [req.body.email], (error, results)=>{
+    console.log(results)
     if(error){
       res.render("error")
     }else{
       if(results>0){
         con.query("SELECT password FROM users WHERE email =?", [req.body.email], (error, userPassword)=>{
+          console.log(userPassword)
           if(error){
             res.render("error")
           }else{

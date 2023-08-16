@@ -2,8 +2,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const mysql = require("mysql");
-// const myFunction() = require("public/views/home#script")
-const {myFunction} = require("./public/scripts/functions.js")
+
 const app = express();
 
 
@@ -30,11 +29,14 @@ const PORT = process.env.PORT || 3000;
 app.get("/", (req, res) => {
   res.render("home");
 });
+app.get("/error", (req, res)=>{
+  res.render("error")
+})
 app.get("/forms", (req, res) => {
   res.render("forms");
 });
 app.get("/sign-in", (req, res)=>{
-
+  res.render("sign-in")
 })
 app.post("/sign-up", (req, res) => {
   con.query(
@@ -52,11 +54,11 @@ app.post("/sign-up", (req, res) => {
               "INSERT INTO users(name, email, password) VALUES(?, ?, ?)",
               [req.body.name, req.body.email, hash],
               (error) => {
-                console.log(req.body);
+                // console.log(req.body);
                 if (error) {
                   res.render("error");
                 } else {
-                  res.render("forms", myFunction())
+                  res.render("signin")
                 }
               }
             );
@@ -66,39 +68,30 @@ app.post("/sign-up", (req, res) => {
     }
   );
 });
-app.post("/sign-in", (req, res)=>{
-  con.query("SELECT * FROM users WHERE email = ?", [req.body.email], (error, results)=>{
-    console.log(results)
-    if(error){
-      res.render("error")
-    }else{
-      if(results>0){
-        con.query("SELECT password FROM users WHERE email =?", [req.body.email], (error, userPassword)=>{
-          console.log(userPassword)
-          if(error){
-            res.render("error")
-          }else{
-            bcrypt.compare(req.body.password, userPassword,(error, match)=>{
-              if(error){
-                res.render("forms", {error: "SOMETHING HAPPENED"})
-              }else{
-                if(match){
-                  res.render("user", {message: "LOGIN SUCCESSFUL"})
-                }else{
-                  res.render("forms", {error: "WRONG PASSWORD"})
-                }
-              }
-            })
-          }
-        })
 
-      }else{
-        res.render("forms", {error: "USER NOT REGISTERED"})
-      }
+app.post("/sign-in", (req,res)=>{
+  con.query("SELECT * FROM users WHERE email = ?", [req.body.email], (error, currentUser)=>{
+    // console.log(currentUser)
+    // console.log(currentUser[0])
+    // console.log(currentUser[0].password)
+    if(error){
+      res.status(500).render("error")
+      console.log("there is an error")
+    }else{
+      bcrypt.compare(req.body.password, currentUser[0].password, (error, match)=>{
+        if(error){
+          req.status(500).render("error")
+        }else{
+          if(match){
+            res.render("user")
+          }else{
+            req.render("sign-in", {error: "Wrong Password"})
+          }
+        }
+      })
     }
   })
 })
-
 app.listen(PORT, () => {
   console.log(`LISTENING ON PORT ${PORT}`);
 });

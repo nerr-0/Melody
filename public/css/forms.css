@@ -60,7 +60,7 @@ input {
 .btn-field {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .btn-field button {
   flex-basis: 48%;

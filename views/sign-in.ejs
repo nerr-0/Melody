@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/forms.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <div class="partials"><%-include('partials/header')%></div>
+
+    <div class="container">
+      <div class="form-box">
+        <h1 id="title2">Sign In</h1>
+        <%if(locals.error){%>
+        <p style="color: red"><%error%></p>
+        <%}%>
+        <form action="/sign-in" method="post">
+          <div class="input-group">
+            <!-- <div class="input-field" id="nameField">
+              <input type="text" name="name" id="name" placeholder="Name" />
+            </div> -->
+            <div class="input-field">
+              <input type="email" name="email" id="email2" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <input
+                type="password"
+                name="password"
+                id="password2"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+          <div class="btn-field">
+            <!-- <button type="submit" id="signupBtn" onclick="anotherFunction()">
+              Sign Up
+            </button> -->
+            <!-- <input type="submit" value="SIGN iN"> -->
+            <button type="submit">Sign In</button>
+          </div>
+          <p>Don't have an account? <a href="/forms">Sign Up</a></p>
+        </form>
+      </div>
+    </div>
+
+    <%-include('partials/footer')%>
+  </body>
+</html>

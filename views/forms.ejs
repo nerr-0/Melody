@@ -35,26 +35,19 @@
             </div>
           </div>
           <div class="btn-field">
-            <button type="submit" id="signupBtn" onclick="anotherFunction()">
+            <button type="submit" id="signupBtn" >
               Sign Up
             </button>
-            <button
-              type="submit"
-              class="disabled"
-              id="signinBtn"
-              onclick="myFunction()"
-              formaction="/sign-in"
-            >
-              Sign In
-            </button>
+            
           </div>
+          <p>Already have an account? <a href="/sign-in">Sign In</a></p>
         </form>
       </div>
     </div>
     
 
     <%-include('partials/footer')%>
-    <script>
+    <!-- <script>
       anotherFunction = () => {
         nameField.style.maxHeight = "65px";
         title.innerHTML = "Sign Up";
@@ -69,6 +62,6 @@
         signinBtn.classList.remove("disabled");
       };
       // export default {myFunction, anotherFunction}
-    </script>
+    </script> -->
   </body>
 </html>

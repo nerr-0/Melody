@@ -2,14 +2,33 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const mysql = require("mysql");
+const cookieParser = require("cookie-parser")
+const sessions = require("express-session")
 
 const app = express();
 
-
+//set the view engine to ejs
 app.set("view engine", "ejs");
+//set the static folder holding the project files
 app.use(express.static("public"));
+//parsing the incoming data
+app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
+//cookie parser middleware
+app.use(cookieParser())
 
+//first, create 24 hours from milliseconds
+const oneDay = 1000 * 60 * 60 *24;
+var session;
+
+//session middlemware
+app.use(sessions({
+  secret: "vhbfvnjnjknbfvjhbsdjhbvjnhfdbv",
+  saveUninitialized: true,
+  cookie: {maxAge: oneDay},
+  resave: false
+}))
+//The following code is the configuration for database connection
 const con = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -23,14 +42,25 @@ con.connect((error) => {
     console.log("CONNECTED");
   }
 });
+//below is code for express sessions options
+
 
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.render("home");
+  // res.render("home");
+  session = req.session;
+  if(session.userId){
+    res.render("user")
+  }else{
+    res.render("home")
+  }
 });
 app.get("/error", (req, res)=>{
   res.render("error")
+})
+app.get("/about", (req, res)=>{
+  res.render("about")
 })
 app.get("/forms", (req, res) => {
   res.render("forms");
@@ -83,9 +113,12 @@ app.post("/sign-in", (req,res)=>{
           req.status(500).render("error")
         }else{
           if(match){
+            session = req.session;
+            session.userId = req.body.name;
+            // console.log(req.session)
             res.render("user")
           }else{
-            req.render("sign-in", {error: "Wrong Password"})
+            req.render("sign-in", {error: "WRONG CREDENTIALS"})
           }
         }
       })

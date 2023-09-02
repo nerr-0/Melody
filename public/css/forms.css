@@ -47,13 +47,14 @@
   transition: max-height 0.5s;
   overflow: hidden;
 }
-input {
+input, select {
   width: 100%;
   background: transparent;
   padding: 18px 15px;
   border: 0;
   outline: 0;
 }
+
 .input-group {
   height: 280px;
 }

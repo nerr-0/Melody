@@ -88,7 +88,7 @@ app.post("/sign-up", (req, res) => {
                 if (error) {
                   res.render("error");
                 } else {
-                  res.render("signin")
+                  res.render("sign-in")
                 }
               }
             );
@@ -102,7 +102,7 @@ app.post("/sign-up", (req, res) => {
 app.post("/sign-in", (req,res)=>{
   con.query("SELECT * FROM users WHERE email = ?", [req.body.email], (error, currentUser)=>{
     // console.log(currentUser)
-    // console.log(currentUser[0])
+    console.log(currentUser[0])
     // console.log(currentUser[0].password)
     if(error){
       res.status(500).render("error")
@@ -116,7 +116,9 @@ app.post("/sign-in", (req,res)=>{
             session = req.session;
             session.userId = req.body.name;
             // console.log(req.session)
-            res.render("user")
+            console.log(currentUser[0].name)
+            let thisUser = currentUser[0]
+            res.render("user", {thisUser})
           }else{
             req.render("sign-in", {error: "WRONG CREDENTIALS"})
           }
